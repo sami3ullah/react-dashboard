@@ -1,3 +1,7 @@
+# Please note
+## I used LocalStorage to save the user data and update the data, prefer refer to the application's local storage in order to see the local storage
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
