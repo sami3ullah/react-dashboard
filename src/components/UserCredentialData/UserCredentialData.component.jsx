@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./UserCredentialsData.styles.scss";
+import "./UserCredentialData.styles.scss";
 import FormInput from "../FormInput/FormInput.component";
 
 class UserData extends React.Component {
@@ -15,9 +15,35 @@ class UserData extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
     try {
+      const { email, password, confirmPassword } = this.state;
+      //   converting the above into object to store it in localstorage, so that we can modify individual values easily
+
+      // crendentials error checking
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+      }
+
+      let passRegex =
+        /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+      if (!passRegex.test(password)) {
+        alert(
+          "Password must contain at least 8 characters, one uppercase, one lowercase, one number and one special character"
+        );
+        return;
+      }
+
+      const userData = {
+        email: email,
+        password: password,
+        confirmPassword: confirmPassword,
+      };
+
       //   store this info in the local storage
+      localStorage.setItem("UserCredential", JSON.stringify(userData));
+      //   alert the user that the info has been updated
+      alert("Your credentials has been updated");
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +77,7 @@ class UserData extends React.Component {
 
           <FormInput
             handleChange={this.handleChange}
-            value={this.state.password}
+            value={this.state.confirmPassword}
             type="password"
             name="confirmPassword"
             label="Confirm Password"
