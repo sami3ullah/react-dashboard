@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./MainUserData.styles.scss";
+import "./UserCredentialsData.styles.scss";
 import FormInput from "../FormInput/FormInput.component";
 
-class MainUserData extends React.Component {
+class UserData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ class MainUserData extends React.Component {
   };
   render() {
     return (
-      <div className="main-user-data">
+      <div className="user-credential-data">
         <h2>Change your credentials</h2>
         <form>
           <FormInput
@@ -70,4 +70,4 @@ class MainUserData extends React.Component {
   }
 }
 
-export default MainUserData;
+export default UserData;

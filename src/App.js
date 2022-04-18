@@ -1,13 +1,13 @@
 import "./App.css";
 import Header from "./components/Header/Header.component";
 import Footer from "./components/Footer/Footer.component";
-import MainUserData from "./components/MainUserData/MainUserData.component";
+import UserData from "./components/UserData/UserData";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <MainUserData />
+      <UserData />
       <Footer />
     </div>
   );
