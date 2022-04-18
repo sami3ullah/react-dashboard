@@ -55,7 +55,7 @@ class UserData extends React.Component {
   };
   render() {
     return (
-      <div className="user-credential-data">
+      <div id="credentialsDiv" className="user-credential-data">
         <h2>Change your credentials</h2>
         <form>
           <FormInput
@@ -86,7 +86,7 @@ class UserData extends React.Component {
 
           {/* submit */}
           <div className="submit-button">
-            <button type="submit" onClick={this.handleSubmit}>
+            <button class="submit" type="submit" onClick={this.handleSubmit}>
               Save
             </button>
           </div>

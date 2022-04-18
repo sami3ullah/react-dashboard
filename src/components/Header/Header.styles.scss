@@ -3,16 +3,24 @@
   align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid #ccc;
+  height: 70px;
+  background-color: #ba68c8;
 
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
+    color: white;
   }
 
   ul {
     list-style: none;
     display: flex;
     gap: 30px;
+    color: white;
+
+    li {
+      cursor: pointer;
+    }
   }
 }
